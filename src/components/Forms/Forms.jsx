@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Input, Checkbox, Button } from '../Form/Form';
+import { Input, Checkbox } from '../Form/Form';
+import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import './Forms.css';
 

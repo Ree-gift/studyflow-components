@@ -49,7 +49,7 @@ export function Input({
         {...rest}
       />
       {error && <span className="sf-form-error">{error}</span>}
-    }
+    </div>
   );
 }
 

@@ -1,0 +1,94 @@
+.sf-form-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sf-form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.sf-form-row > * {
+  flex: 1;
+}
+
+.sf-form-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.sf-form-link:hover {
+  text-decoration: underline;
+}
+
+.sf-form-social {
+  margin-top: 1.5rem;
+}
+
+.sf-form-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.sf-form-divider::before,
+.sf-form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.sf-form-social-btns {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sf-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.sf-social-btn:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.sf-form-footer-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Contact Form specific */
+.sf-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .sf-form-row {
+    flex-direction: column;
+  }
+}

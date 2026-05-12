@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+  background: #f9fafb;
+}
+
+.sf-demo {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.sf-hero {
+  padding: 8rem 1.5rem 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f3ff 0%, #eef2ff 100%);
+}
+
+.sf-hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.sf-hero__title span {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sf-hero__desc {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.sf-hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Sections */
+.sf-section {
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sf-section__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sf-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Demo Rows */
+.sf-demo-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sf-demo-label {
+  min-width: 80px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Card Grids */
+.sf-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .sf-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sf-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sf-hero__title {
+    font-size: 2rem;
+  }
+  
+  .sf-hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Forms Demo */
+.sf-forms-demo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.sf-form-demo-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.sf-form-demo-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.sf-form-demo-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .sf-forms-demo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.sf-footer {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}

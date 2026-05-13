@@ -101,6 +101,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  min-width: 0;
+}
+
+.sf-cards-grid > * {
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
@@ -129,6 +134,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  min-width: 0;
+}
+
+.sf-forms-demo > * {
+  min-width: 0;
 }
 
 .sf-form-demo-box {

@@ -1,6 +1,7 @@
 .sf-navbar {
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
@@ -48,6 +49,22 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  min-width: 0;
+}
+
+.sf-navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.sf-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .sf-navbar__links {

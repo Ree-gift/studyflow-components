@@ -239,7 +239,7 @@ function App() {
       {/* Modals */}
       <LoginForm isOpen={showLogin} onClose={() => setShowLogin(false)} onSubmit={handleLogin} />
       <SignupForm isOpen={showSignup} onClose={() => setShowSignup(false)} onSubmit={handleSignup} />
-      <Modal open={showCustomModal} onClose={() => setShowCustomModal(false)}>
+      <Modal isOpen={showCustomModal} onClose={() => setShowCustomModal(false)}>
         <h2 style={{ margin: 0 }}>Custom Modal</h2>
         <p>This modal is built using the reusable Modal component. You can put any content here.</p>
         <Button onClick={() => setShowCustomModal(false)}>Close</Button>

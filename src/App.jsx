@@ -19,6 +19,7 @@ import './App.css';
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
+  const [showCustomModal, setShowCustomModal] = useState(false);
   const [expandedCard, setExpandedCard] = useState(null);
 
   const navLinks = [
@@ -211,7 +212,7 @@ function App() {
                 />
               </div>
             </div>
-            <div className="sf-form-demo-box">
+            <div className="sf-form-demo-box" id="contact">
               <h3>Contact Form</h3>
               <ContactForm onSubmit={handleContact} />
             </div>
@@ -226,7 +227,7 @@ function App() {
           <div className="sf-demo-row">
             <Button onClick={() => setShowLogin(true)}>Open Login Modal</Button>
             <Button onClick={() => setShowSignup(true)}>Open Signup Modal</Button>
-            <Button onClick={() => alert('Custom modal content')}>Open Custom Modal</Button>
+            <Button onClick={() => setShowCustomModal(true)}>Open Custom Modal</Button>
           </div>
         </div>
       </section>
@@ -238,6 +239,11 @@ function App() {
       {/* Modals */}
       <LoginForm isOpen={showLogin} onClose={() => setShowLogin(false)} onSubmit={handleLogin} />
       <SignupForm isOpen={showSignup} onClose={() => setShowSignup(false)} onSubmit={handleSignup} />
+      <Modal open={showCustomModal} onClose={() => setShowCustomModal(false)}>
+        <h2 style={{ margin: 0 }}>Custom Modal</h2>
+        <p>This modal is built using the reusable Modal component. You can put any content here.</p>
+        <Button onClick={() => setShowCustomModal(false)}>Close</Button>
+      </Modal>
     </div>
   );
 }

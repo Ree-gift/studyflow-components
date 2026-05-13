@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Input, Checkbox } from '../Form/Form';
+import { Input, Checkbox, Select, Textarea } from '../Form/Form';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
+import '../Form/Form.css';
 import './Forms.css';
 
 /**
@@ -22,14 +23,8 @@ export function LoginForm({ isOpen, onClose, onSubmit }) {
     onSubmit?.({ email, password, remember });
   };
 
-  const footer = (
-    <>
-      <Button variant="primary" fullWidth onClick={handleSubmit}>Log In</Button>
-    </>
-  );
-
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Welcome Back" size="md" footer={footer}>
+    <Modal isOpen={isOpen} onClose={onClose} title="Welcome Back" size="md">
       <form className="sf-form-demo" onSubmit={handleSubmit}>
         <Input
           label="Email Address"
@@ -55,6 +50,7 @@ export function LoginForm({ isOpen, onClose, onSubmit }) {
           />
           <a href="#" className="sf-form-link">Forgot password?</a>
         </div>
+        <Button variant="primary" fullWidth type="submit">Log In</Button>
       </form>
       <div className="sf-form-social">
         <span className="sf-form-divider">or continue with</span>
@@ -102,10 +98,6 @@ export function SignupForm({ isOpen, onClose, onSubmit }) {
     onSubmit?.(formData);
   };
 
-  const footer = (
-    <Button variant="primary" fullWidth onClick={handleSubmit}>Create Account</Button>
-  );
-
   const roleOptions = [
     { value: 'student', label: 'Student' },
     { value: 'tutor', label: 'Tutor' },
@@ -114,7 +106,7 @@ export function SignupForm({ isOpen, onClose, onSubmit }) {
   ];
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Create Account" size="md" footer={footer}>
+    <Modal isOpen={isOpen} onClose={onClose} title="Create Account" size="md">
       <form className="sf-form-demo" onSubmit={handleSubmit}>
         <div className="sf-form-row">
           <Input
@@ -149,24 +141,19 @@ export function SignupForm({ isOpen, onClose, onSubmit }) {
           required
           minLength={8}
         />
-        <div className="sf-form-group">
-          <label className="sf-form-label">I am a... <span className="sf-form-required">*</span></label>
-          <select
-            className="sf-form-select"
-            value={formData.role}
-            onChange={handleChange('role')}
-            required
-          >
-            <option value="">Select your role</option>
-            {roleOptions.map(opt => (
-              <option key={opt.value} value={opt.value}>{opt.label}</option>
-            ))}
-          </select>
-        </div>
+        <Select
+          label="I am a..."
+          options={roleOptions}
+          value={formData.role}
+          onChange={handleChange('role')}
+          placeholder="Select your role"
+          required
+        />
         <Checkbox
           label="I agree to the Terms of Service and Privacy Policy"
           required
         />
+        <Button variant="primary" fullWidth type="submit">Create Account</Button>
       </form>
       <p className="sf-form-footer-text">
         Already have an account? <a href="#" className="sf-form-link">Log in</a>
@@ -226,34 +213,23 @@ export function ContactForm({ onSubmit, className = '' }) {
           required
         />
       </div>
-      <div className="sf-form-group">
-        <label className="sf-form-label">Subject <span className="sf-form-required">*</span></label>
-        <select
-          className="sf-form-select"
-          value={formData.subject}
-          onChange={handleChange('subject')}
-          required
-        >
-          <option value="">What is this about?</option>
-          {subjectOptions.map(opt => (
-            <option key={opt.value} value={opt.value}>{opt.label}</option>
-          ))}
-        </select>
-      </div>
-      <div className="sf-form-group">
-        <label className="sf-form-label">Message <span className="sf-form-required">*</span></label>
-        <textarea
-          className="sf-form-textarea"
-          placeholder="Tell us how we can help..."
-          value={formData.message}
-          onChange={handleChange('message')}
-          rows={5}
-          required
-        />
-      </div>
+      <Select
+        label="Subject"
+        options={subjectOptions}
+        value={formData.subject}
+        onChange={handleChange('subject')}
+        placeholder="What is this about?"
+        required
+      />
+      <Textarea
+        label="Message"
+        placeholder="Tell us how we can help..."
+        value={formData.message}
+        onChange={handleChange('message')}
+        rows={5}
+        required
+      />
       <Button variant="primary" size="lg" fullWidth type="submit">Send Message</Button>
     </form>
   );
 }
-
-export default { LoginForm, SignupForm, ContactForm };

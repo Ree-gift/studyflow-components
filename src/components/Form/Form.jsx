@@ -198,5 +198,3 @@ export function Textarea({
     </div>
   );
 }
-
-export default { Input, Checkbox, Select, Textarea };

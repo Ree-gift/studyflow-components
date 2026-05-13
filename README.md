@@ -292,21 +292,61 @@ npm run deploy
 
 ---
 
-## Task 2 Requirements Met
+## Task 2 Submission Checklist
 
-- ✅ Reusable components (Button, Cards, Navbar, Modal, Forms)
-- ✅ Props-based customization
-- ✅ Consistent styling (CSS variables)
-- ✅ Proper naming conventions (sf-prefix)
-- ✅ Clear folder structure
-- ✅ Component documentation (props, usage)
-- ✅ Demo page showcasing all components
-- ✅ GitHub repository
-- ✅ Live demo deployed
+### Project Setup & Structure
+- [x] Public GitHub repository
+- [x] Vite + React project setup
+- [x] Clean folder structure (components in `src/components/`)
+- [x] Barrel exports via `src/components/index.js`
+- [x] No UI frameworks — pure CSS
 
----
+### Components
+- [x] **Button** — variants, sizes, states (disabled, loading), fullWidth
+- [x] **FeatureCard** — icon, title, description, expandable content
+- [x] **TestimonialCard** — rating stars, quote, author with avatar
+- [x] **PricingCard** — plan tiers, features list, popular badge, CTA
+- [x] **Navbar** — responsive, scroll-aware, mobile hamburger menu
+- [x] **Modal** — overlay, close button, Escape key, size variants
+- [x] **Input** — label, error state, required indicator
+- [x] **Checkbox** — label, checked/disabled states
+- [x] **Select** — options, placeholder, required
+- [x] **Textarea** — label, rows, placeholder, required
+- [x] **LoginForm** — email, password, remember me, social login, modal-based
+- [x] **SignupForm** — name, email, password, role select, modal-based
+- [x] **ContactForm** — name, email, subject, message, standalone
 
-**Intern:** Ree-gift  
-**Track:** Development  
-**Week:** 2 (Task 2)  
-**Status:** Completed
+### Code Quality
+- [x] No unused imports
+- [x] Consistent use of reusable components (Select, Textarea in forms)
+- [x] Submit buttons inside `<form>` elements (proper HTML5 validation)
+- [x] No redundant default exports (avoids react-refresh warnings)
+- [x] Direct imports for CSS dependencies
+- [x] Consistent `sf-` naming prefix
+- [x] JSDoc documentation on all components
+
+### Demo Page (App.jsx)
+- [x] All components showcased with examples
+- [x] Navbar scrolls to correct sections (#features, #testimonials, #pricing, #contact)
+- [x] Login/Signup modals open from navbar buttons
+- [x] Custom modal demo replacing alert stub
+- [x] Form submission confirmation alerts
+- [x] Responsive layout
+
+### Documentation
+- [x] README with project overview, setup, and usage
+- [x] Component API docs (props, types, defaults)
+- [x] Project structure diagram
+- [x] Tech stack listed
+- [x] Live demo link
+
+### Deployment
+- [x] Production build succeeds
+- [x] Deployed to Vercel
+- [x] Live at [studyflow-components.vercel.app](https://studyflow-components.vercel.app)
+
+### Submission Info
+- **Intern:** Ree-gift
+- **Track:** Development
+- **Week:** 2 (Task 2)
+- **Status:** Completed

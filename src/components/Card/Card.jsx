@@ -87,7 +87,6 @@ export function TestimonialCard({
  * @param {string} description - Plan description
  * @param {string|number} price - Price amount
  * @param {string} period - Billing period (e.g., '/month')
- * @param {string} period - Billing period (e.g., '/month')
  * @param {boolean} popular - Whether this is the popular/featured plan
  * @param {string} popularBadge - Badge text for popular plan
  * @param {Array} features - Array of feature strings
@@ -135,5 +134,3 @@ export function PricingCard({
     </div>
   );
 }
-
-export default { FeatureCard, TestimonialCard, PricingCard };

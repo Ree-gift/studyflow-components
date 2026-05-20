@@ -15,3 +15,6 @@ export { Input, Checkbox, Select, Textarea } from './Form/Form';
 
 // Form Examples
 export { LoginForm, SignupForm, ContactForm } from './Forms/Forms';
+
+// Post Card Component
+export { default as PostCard } from './PostCard/PostCard';

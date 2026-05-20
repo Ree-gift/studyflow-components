@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, useMemo, lazy, Suspense } from 'react';
 import {
   Button,
   FeatureCard,
@@ -15,6 +15,8 @@ import {
 } from './components';
 import './App.css';
 
+const CommunityPosts = lazy(() => import('./components/CommunityPosts/CommunityPosts'));
+
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
@@ -25,6 +27,7 @@ function App() {
     { label: 'Features', href: '#features' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Pricing', href: '#pricing' },
+    { label: 'Community', href: '#community' },
     { label: 'Contact', href: '#contact' }
   ];
 
@@ -178,6 +181,25 @@ function App() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Community Posts Section (API Integration) */}
+      <section className="sf-section" id="community">
+        <h2 className="sf-section__title">Community Posts</h2>
+        <div className="sf-section__content">
+          <p className="sf-section__desc">
+            Posts fetched from JSONPlaceholder API with lazy-loaded images, search filtering,
+            and loading states.
+          </p>
+          <Suspense fallback={
+            <div className="sf-community__loading" role="status" aria-live="polite">
+              <div className="sf-community__spinner" aria-hidden="true"></div>
+              <p>Loading section...</p>
+            </div>
+          }>
+            <CommunityPosts />
+          </Suspense>
         </div>
       </section>
 
